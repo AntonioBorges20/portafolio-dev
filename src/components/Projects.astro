@@ -1,0 +1,102 @@
+---
+import HTML from "../components/icons/HTML.astro";
+import CSS from "../components/icons/CSS.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import WordPress from "./icons/WordPress.astro";
+import LinkButton from "./LinkButton.astro";
+import GitHub from "./icons/GitHub.astro";
+import Next from "./icons/Next.astro";
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "text-white font-medium bg-[#e34f26]/40",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "text-white font-medium bg-[#0c73b8]/40",
+    icon: CSS,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    class: "text-white font-medium bg-[#f0db4f]/40",
+    icon: JavaScript,
+  },
+  WordPress: {
+    name: "WordPress",
+    class: "text-white font-medium bg-[#21759b]/40",
+    icon: WordPress,
+  },
+};
+const PROJECTS = [
+  {
+    title: "City Sightseeing - E-commerce",
+    description:
+      "Una web diseñado para una empresa de tours en Cartagena con el propósito de informar y realizar compras del mismo. Desarrollado mediante el uso de tecnologías como HTML, CSS y JavaScript, aprovechando la API de Mapbox para garantizar una experiencia visual y funcional excepcional.",
+    link: "https://citysightseeing.com.co/",
+    github: "",
+    image: "/projects/citysightseeing.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
+  },
+  {
+    title: "Sunset World Resorts - Web Informativo",
+    description:
+      "Actualmente en desarrollo, Sunset World Resorts se presenta como una plataforma web promocional e informativa destinada a uno de los hoteles más destacados en Quintana Roo, México. Con el compromiso de convertirse en la herramienta digital de la cadena hotelera, esta página está diseñada para ofrecer información detallada sobre eventos, servicios, y ofertas. Este cuanta con la posibilidad de realizar reservas directas a través de un motor de reservas incorporado.",
+    link: "https://desarrollo.sunsetworldresorts.com/",
+    github: "",
+    image: "/projects/sunsetworldresorts.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
+  },{
+    title: "Quirurgica Del Sur - Web Informativo",
+    description:
+      "El enfoque principal fue el desarrollo de un sitio web completamente informativo y funcional, con un diseño atractivo e intuitivo para los usuarios. Se implementaron estrategias de SEO de alta calidad para mejorar la visibilidad en las búsquedas en Internet. El resultado fue una experiencia digital excepcional que combinó funcionalidades innovadoras con un diseño adaptado a las necesidades específicas del cliente.",
+    link: "https://noelir3.sg-host.com/",
+    github: "",
+    image: "/projects/quirurgicadelsur.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.WordPress],
+  }
+];
+---
+
+<section class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ title, description, image, tags, link, github }) => (
+      <article>
+        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 flex-row mb-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x2 rounded-full text-xs ${tag.class} py-1 px-2`}
+              >
+                <tag.icon class="size-4 mr-2" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          loading="lazy"
+          class="rounded shadow-2xl shadow-white/10 aspect-video"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
+        />
+        <footer class="flex gap-x-4 items-end justify-star mt-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Ver codigo fuente
+            </LinkButton>
+          )}
+
+          <LinkButton href={link}>
+            Ir al sitio web
+            <Next class="size 6" />
+          </LinkButton>
+        </footer>
+      </article>
+    ))
+  }
+</section>

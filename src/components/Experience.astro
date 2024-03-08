@@ -1,0 +1,29 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Marzo 2023 - En curso...",
+    tittle: "Desarrollador FrontEnd - Neo E-Marketing",
+    description:
+      "Destacado en el diseño y desarrollo de sitios web, con especialización en plataformas como WordPress y Elementor. Enfocado en abarcar la programacion de fragmentos de código HTML, CCS, JavaScript y PHP así como la implementación de APIS y otras tecnologías. Creando asi experiencias digitales expecionales y funcionalidades inovadoras.",
+    link: "",
+  },
+  {
+    date: "Septiembre 2023 - Diciembre 2023",
+    tittle: "Proyecto Freelance - Quirurgica Del Sur",
+    description:
+      "Enfocado en la creación de un sitio web atractivo, funcional e intuitivo para los usuarios. Especializado en el uso de plataformas como WordPress y Divi Builder, y hábil en la implementación de tecnologías como HTML, CSS y JavaScript para lograr una mejor experiencia de usuario.",
+    link: "https://noelir3.sg-host.com/",
+  }
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

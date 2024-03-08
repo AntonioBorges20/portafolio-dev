@@ -1,0 +1,92 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import Badge from "@/components/Badge.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import MessageIcon from "@/components/icons/Message.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import SocialPill from "@/components/SocialPill.astro";
+---
+
+<Layout
+  title="Portafolio de Antonio Borges - Desarrollador y Programador Web con 1 año de experiencia"
+  description="Contrata a Antonio Borges para crear tu aplicacion web o móvil. Desarrollador Web y Diseñador UX/UI. Especializado en crear apliacaciones únicas"
+>
+  <main class="px-4">
+    <SectionContainer id="inicio"class="py-24 pb-24">
+      <img
+        class="rounded-full size-24 mb-4"
+        src="/public/img/antonioBorgesIcon.webp"
+        alt="Personal photo"
+      />
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold pb-6 lg:pb-10 flex flex-col md:flex-row items-start md:items-center">
+        <span>Hola, soy Antonio</span>
+        <a href="https://www.linkedin.com/in/antonio-borges-714383254/" target="_blank" rel="noopener" class="flex justify-center items-center hover:scale-105 transition md:ml-4 md:mt-0 mt-4">
+          <div>
+            <Badge>Desarrollor Web</Badge>
+          </div>
+        </a>        
+      </h1>
+      
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span>+1 año de experiencia.</span><span
+          class="text-yellow-200/90 opacity-80"
+        >
+          Desarrollador Web y diseñador UX/UI en</span
+        ><span class="text-green-200/90"> Cancún, Quintana Roo.</span>
+        <span class="opacity-75"
+          >Especializado en crear aplicaciones web únicas y atractivas, con la pasión en implementar experiencias de usuario extraordinarias. </br></span
+        >
+        <span class="text-white font-semibold"
+          >¡Explora mi mundo digital ahora! </span
+        >
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill
+          href="https://www.linkedin.com/in/antonio-borges-714383254/">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/Anthonybc329">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:anthonybc329@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+          anthonybc329@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-7" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white dark:text-black">
+        <ProfileCheck class="size-7" />
+        Sobre mi
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+  </main>
+</Layout>
